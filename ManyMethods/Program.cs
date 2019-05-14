@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ManyMethods
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args) //for calling function, code does not go in here.
+        private static void Main(string[] args) //for calling function, code does not go in here.
         {
             Hello();
             Addition();
@@ -21,6 +17,7 @@ namespace ManyMethods
             Age();
             Guess();
         }
+
         public static void Hello()
         {
             Console.WriteLine("What is your name?");
@@ -28,6 +25,7 @@ namespace ManyMethods
             Console.WriteLine("Goodbye " + name);
             Console.Read();
         }
+
         public static void Addition()
         {
             Console.WriteLine("Please enter number 1: ");
@@ -38,6 +36,7 @@ namespace ManyMethods
             Console.WriteLine("The Sum is " + sum);
             Console.Read();
         }
+
         public static void CatDog()
         {
             Console.WriteLine("Do you prefer cats or dogs?");
@@ -52,6 +51,7 @@ namespace ManyMethods
             }
             Console.Read();
         }
+
         public static void OddEven()
         {
             Console.WriteLine("Enter a number: ");
@@ -66,14 +66,16 @@ namespace ManyMethods
             }
             Console.Read();
         }
+
         public static void Inches()
         {
             Console.WriteLine("Give me your height in feet, and I'll turn it to inches");
-            decimal num4 = Convert.ToDecimal(Console.ReadLine());
-            decimal inches = num4 * 12;
+            double num4 = Convert.ToDouble(Console.ReadLine());
+            double inches = num4 * 12;
             Console.WriteLine("Your height in inches is " + inches);
             Console.Read();
         }
+
         public static void Echo()
         {
             Console.WriteLine("Say something: ");
@@ -85,6 +87,7 @@ namespace ManyMethods
             //Console.WriteLine(lowerpeat);
             Console.Read();
         }
+
         public static void KillGrams()
         {
             Console.WriteLine("Give me your weight in pounds, and I'll tell you your weight in killograms.");
@@ -94,12 +97,14 @@ namespace ManyMethods
             Console.WriteLine("Your weight is " + f + " killograms.");
             Console.Read();
         }
+
         public static void Date()
         {
             DateTime thisDay = DateTime.Today;
             Console.WriteLine(thisDay.ToString("d"));
             Console.Read();
         }
+
         public static void Age()
         {
             Console.WriteLine("What is your birth year?");
@@ -108,6 +113,7 @@ namespace ManyMethods
             Console.WriteLine("You age is " + age + "!");
             Console.Read();
         }
+
         public static void Guess()
         {
             Console.WriteLine("Guess a word that is 6 letters long, starts with C and ends with a P: ");

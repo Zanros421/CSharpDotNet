@@ -1,14 +1,15 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ManyMethods")]
+[assembly: AssemblyTitle("Rock, Paper, Scissors")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ManyMethods")]
+[assembly: AssemblyProduct("Rock, Paper, Scissors")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("acd8bc92-957e-4db4-bf6c-53b136c7a6ad")]
+[assembly: Guid("8b7b2a21-d75f-43f8-8fae-365ac7d03a11")]
 
 // Version information for an assembly consists of the following four values:
 //
