@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ManyMethods",
+    "\\PigLatin",
+    "\\Rock, Paper, Scissors"
   ],
+  "SelectedNode": "\\ManyMethods\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
