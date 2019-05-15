@@ -11,51 +11,75 @@ namespace Rock__Paper__Scissors
         static void Main(string[] args)
         {
             Console.WriteLine("Choose your weapon: Rock, Paper, or Scissors.");
-            string Weapon = Console.ReadLine().ToLower();
-            string Winner = RocPapSci(Weapon);
-            Console.WriteLine(Winner);
+            string player = Console.ReadLine().ToLower();
             Console.Read();
-        }
-        public static string RocPapSci(string Weapon)
-        {
-            string result = " ";
-            string[] Proper = { "rock", "paper", "scissors" };
+        //}
+        //public static string RocPapSci(string player)
+        //{
+            //string[] proper = { "rock", "paper", "scissors" };
             Random Choice = new Random();
             int newChoice = Choice.Next(0, 3);
-            if (newChoice == 0)
+            int newChoice;
+            string computer;
+            int scorePlayer = 0;
+            int scoreCPU = 0;
+            switch (newChoice)
             {
-                string Computer1 = "rock";
+                case 0:
+                    computer = "rock";
+                    Console.WriteLine("Computer chose Rock");
+                    if (player == "rock")
+                    {
+                        Console.WriteLine("Darn, it looks like we tied.");
+                    }
+                    else if (player == "paper")
+                    {
+                        Console.WriteLine("Dang, you win this round!");
+                        scorePlayer++;
+                    }
+                    else if (player == "scissors")
+                    {
+                        Console.WriteLine("Hahahaha I win!");
+                        scoreCPU++;
+                    }
+                    break;
+                case 1:
+                    computer = "paper";
+                    Console.WriteLine("Computer chose Paper");
+                    if (player == "rock")
+                    {
+                        Console.WriteLine("Hahahaha I win!");
+                        scoreCPU++;
+                    }
+                    else if (player == "paper")
+                    {
+                        Console.WriteLine("Darn, it looks like we tied.");
+                    }
+                    else if (player == "scissors")
+                    {
+                        Console.WriteLine("Dang, you win this round!");
+                        scorePlayer++;
+                    }
+                    break;
+                case 2:
+                    computer = "scissors";
+                    Console.WriteLine("Computer chose Scissors");
+                    if (player == "rock")
+                    {
+                        Console.WriteLine("Dang, you win this round!");
+                        scorePlayer++;
+                    }
+                    else if (player == "paper")
+                    {
+                        Console.WriteLine("Hahahaha I win!");
+                        scoreCPU++;
+                    }
+                    else if (player == "scissors")
+                    {
+                        Console.WriteLine("Darn, it looks like we tied.");
+                    }
+                    break;
             }
-            else if (newChoice == 1)
-            {
-                string Computer2 = "paper";
-            }
-            else
-            {
-                string Computer3 = "scissors";
-            }
-
-
-            if (Proper.Contains(Weapon))
-            {
-                if (Proper == Computer1)
-                {
-                    Console.WriteLine("We tied, lets try again!");
-                }
-                else if (Proper && Computer2)
-                {
-                    Console.WriteLine("Haha I win!");
-                }
-                else if (Proper && Computer3)
-                {
-                    Console.WriteLine("Darn, you are the winner!");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Not a valid answer");
-            }
-            return result;
         }
     }
 }
