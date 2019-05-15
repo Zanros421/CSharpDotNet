@@ -12,62 +12,39 @@ namespace MakePigLatin
         {
             Console.WriteLine("Give me a word/sentence in the English, so I may convert it to Pig Latin.");
             string word = Console.ReadLine();
-            string PigLatin = ToPigLatin(word);
+            string PigLatin = ToPigLatin(word).ToLower();
             Console.WriteLine(PigLatin);
             Console.Read();
         }
         public static string ToPigLatin(string word)
         {
-            const string vowels = "AEIOUaeiou;";
-            const string consonants = "BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz";
-            List<string> PigLatinWords = new List<string>();
+            char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+
+            int firstVowel = word.LastIndexOf(vowels);
+
 
             foreach (string s in word.Split(' '))
             {
-                string firstLetter = s.Substring(0, 1);
-                string PigLatin = s.Substring(1) + firstLetter + "ay";
-                int vowelIndex = vowels.IndexOf(firstLetter);
-                if (s.Length > 1)
+                if (firstVowel == -1)
                 {
-                    string TwoLetters = s.Substring(0, 2);
-                    string SecondLetter = s.Substring(1, 1);
-                    string DoubleConsPigLatin = s.Substring(2) + TwoLetters + "ay";
-                    int DoubleConsIndex = consonants.IndexOf(SecondLetter);
-
-                    if (vowelIndex == -1 && DoubleConsIndex > -1)
-                    {
-                        PigLatinWords.Add(DoubleConsPigLatin);
-                    }
-                    else if (vowelIndex == -1)
-                    {
-                        PigLatinWords.Add(PigLatin);
-                    }
-                    else if (vowelIndex > -1)
-                    {
-                        PigLatinWords.Add(s + "way");
-                    }
-                    else
-                    {
-                        Console.WriteLine("please Try again");
-                    }
+                    Console.WriteLine(word + "ay");
                 }
                 else
                 {
-                    if (vowelIndex == -1)
+                    char firstLet = word[0];
+                    char lastLet = word[word.Length - 1];
+                    if (vowels.Contains(firstLet) && vowels.Contains(lastLet))
                     {
-                        PigLatinWords.Add(PigLatin);
-                    }
-                    else if (vowelIndex > -1)
-                    {
-                        PigLatinWords.Add(s + "ay");
+                        Console.WriteLine(word + "yay");
                     }
                     else
                     {
-                        Console.WriteLine("Invalid. Try again.");
+                        string half1 = word.Substring(0, firstVowel);
+                        string half2 = word.Substring(firstVowel);
+                        return (half2 + half1 + "ay");
                     }
                 }
-            }
-            return string.Join(" ", PigLatinWords);                      
+            }          
         }
     }
 }
