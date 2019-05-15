@@ -11,8 +11,8 @@ namespace MakePigLatin
         static void Main(string[] args)
         {
             Console.WriteLine("Give me a word/sentence in the English, so I may convert it to Pig Latin.");
-            string word = Console.ReadLine();
-            string PigLatin = ToPigLatin(word).ToLower();
+            string word = Console.ReadLine().ToLower();
+            string PigLatin = ToPigLatin(word);
             Console.WriteLine(PigLatin);
             Console.Read();
         }
