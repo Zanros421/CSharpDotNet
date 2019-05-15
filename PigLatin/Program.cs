@@ -12,11 +12,11 @@ namespace MakePigLatin
         {
             Console.WriteLine("Give me a word/sentence in the English, so I may convert it to Pig Latin.");
             string word = Console.ReadLine().ToLower();
-            string PigLatin = ToPigLatin(word);
+            string PigLatin = Translate(word);
             Console.WriteLine(PigLatin);
             Console.Read();
         }
-        public static string ToPigLatin(string word)
+        public static string Translate(string word)
         {
             char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
 
@@ -27,7 +27,7 @@ namespace MakePigLatin
             {
                 if (firstVowel == -1)
                 {
-                    Console.WriteLine(word + "ay");
+                    Console.WriteLine(word.Join(" ", word) + "ay");
                 }
                 else
                 {
