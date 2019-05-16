@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\PigLatin",
     "\\Rock, Paper, Scissors"
   ],
-  "SelectedNode": "\\Rock, Paper, Scissors\\Program.cs",
+  "SelectedNode": "\\Rock, Paper, Scissors\\Rock, Paper, Scissors.csproj",
   "PreviewInSolutionExplorer": false
 }

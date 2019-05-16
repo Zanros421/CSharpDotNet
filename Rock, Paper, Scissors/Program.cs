@@ -12,14 +12,12 @@ namespace Rock__Paper__Scissors
         {
             Console.WriteLine("Choose your weapon: Rock, Paper, or Scissors.");
             string player = Console.ReadLine().ToLower();
-            Console.Read();
         //}
         //public static string RocPapSci(string player)
         //{
             //string[] proper = { "rock", "paper", "scissors" };
             Random Choice = new Random();
             int newChoice = Choice.Next(0, 3);
-            int newChoice;
             string computer;
             int scorePlayer = 0;
             int scoreCPU = 0;

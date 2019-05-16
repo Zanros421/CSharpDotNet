@@ -20,14 +20,14 @@ namespace MakePigLatin
         {
             char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
 
-            int firstVowel = word.LastIndexOf(vowels);
+            int firstVowel = word.IndexOfAny(vowels);
 
 
             foreach (string s in word.Split(' '))
             {
                 if (firstVowel == -1)
                 {
-                    Console.WriteLine(word.Join(" ", word) + "ay");
+                    return (word + "ay");
                 }
                 else
                 {
@@ -35,7 +35,7 @@ namespace MakePigLatin
                     char lastLet = word[word.Length - 1];
                     if (vowels.Contains(firstLet) && vowels.Contains(lastLet))
                     {
-                        Console.WriteLine(word + "yay");
+                        return (word + "yay");
                     }
                     else
                     {
@@ -44,7 +44,8 @@ namespace MakePigLatin
                         return (half2 + half1 + "ay");
                     }
                 }
-            }          
+            }
+            return ("Please give a valid word or sentence.");
         }
     }
 }
